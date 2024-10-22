@@ -1,0 +1,109 @@
+/* Importa los estilos generales */
+@import url('styles.css');
+
+/* Estilos específicos para admin.html */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.admin-header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-header button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.admin-header button:hover {
+    background-color: #45a049;
+}
+
+.admin-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.admin-section {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.admin-btn {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#admin-account-modal .modal-content {
+    max-width: 400px;
+}
+
+#admin-account-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#admin-account-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#admin-account-form button:hover {
+    background-color: #45a049;
+}
+
+#admin-account-message {
+    margin-top: 10px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.admin-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#product-category-filter {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ... (resto de los estilos específicos para admin.html) ... */

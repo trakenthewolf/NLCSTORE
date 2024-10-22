@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - NLCSTORE</title>
+    <link rel="stylesheet" href="register-styles.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="video fondo.mp4" type="video/mp4">
+            Tu navegador no soporta el tag de video.
+        </video>
+    </div>
+    <div class="content">
+        <form class="form" id="register-form">
+            <p class="title">Registro</p>
+            <p class="message">Regístrate ahora y obtén acceso completo a nuestra tienda. </p>
+            <label>
+                <input required class="input" type="email" id="email">
+                <span>Email</span>
+            </label> 
+            <label>
+                <input required class="input" type="tel" id="phone">
+                <span>Teléfono</span>
+            </label>
+            <label>
+                <input required class="input" type="password" id="password">
+                <span>Contraseña</span>
+            </label>
+            <label>
+                <input required class="input" type="password" id="confirm-password">
+                <span>Confirmar contraseña</span>
+            </label>
+            <button class="submit" type="submit">Registrarse</button>
+            <p class="signin">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a> </p>
+        </form>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

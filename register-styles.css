@@ -1,0 +1,206 @@
+/* Añade esto al principio del archivo */
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #000000;
+  --clr-primary: #4CAF50;
+  --clr-secondary: #45a049;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    color: var(--bg-light);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: var(--clr-primary);
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: var(--clr-primary);
+}
+
+.title::after {
+    animation: pulse 1s linear infinite;
+}
+
+.message, 
+.signin {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a:hover {
+    text-decoration: underline var(--clr-primary);
+}
+
+.signin a {
+    color: var(--clr-primary);
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    border: none;
+    border-bottom: 1px solid var(--clr-primary);
+    background-color: transparent;
+    color: var(--bg-light);
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+}
+
+.form label .input + span {
+    color: var(--clr-primary);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+    color: var(--clr-secondary);
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--bg-dark);
+    font-size: 16px;
+    transform: .3s ease;
+    background-color: var(--clr-primary);
+}
+
+.submit:hover {
+    background-color: var(--clr-secondary);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,141 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #000000;
+  --clr-primary: #4CAF50;
+  --clr-secondary: #45a049;
+  --clr-alpha: rgba(76, 175, 80, 0.1);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    padding: 2rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+}
+
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+    border: none;
+    border-bottom: 1px solid var(--clr-primary);
+    background-color: transparent;
+    color: var(--bg-light);
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+    outline: none;
+    border-bottom: 2px solid var(--clr-secondary);
+}
+
+.label {
+    align-self: flex-start;
+    color: var(--clr-primary);
+    font-weight: 600;
+}
+
+.form .submit {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    background-color: var(--clr-primary);
+    color: var(--bg-dark);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form .submit:hover {
+    background-color: var(--clr-secondary);
+}
+
+.span {
+    text-decoration: none;
+    color: var(--bg-light);
+}
+
+.span a {
+    color: var(--clr-primary);
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--clr-primary);
+    color: var(--bg-light);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: var(--clr-secondary);
+    transform: scale(1.1);
+}

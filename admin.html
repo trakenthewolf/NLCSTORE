@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - NLCSTORE</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <script>
+        if (localStorage.getItem('isAdminLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <header class="admin-header">
+        <h1>Panel de Administración</h1>
+        <nav>
+            <button id="admin-account-btn">Mi Cuenta</button>
+            <button id="admin-logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <main id="admin-panel" class="admin-main">
+        <section class="admin-section">
+            <h2>Categorías</h2>
+            <button id="add-category-btn" class="admin-btn">Añadir Nueva Categoría</button>
+            <ul id="category-list" class="admin-list"></ul>
+        </section>
+        
+        <section class="admin-section">
+            <h2>Productos</h2>
+            <div id="product-controls" class="admin-controls">
+                <button id="add-product-btn" class="admin-btn">Añadir Nuevo Producto</button>
+                <input type="text" id="product-search" placeholder="Buscar productos..." class="admin-input">
+                <select id="product-category-filter" class="admin-select">
+                    <option value="all">Todas las categorías</option>
+                    <option value="uncategorized">Sin categoría</option>
+                    <!-- Las demás categorías se añadirán dinámicamente -->
+                </select>
+            </div>
+            <div id="product-list" class="admin-product-grid"></div>
+            <div id="pagination" class="admin-pagination">
+                <button id="prev-page" class="admin-btn">Anterior</button>
+                <span id="page-info"></span>
+                <button id="next-page" class="admin-btn">Siguiente</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="add-category-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Añadir Nueva Categoría</h2>
+            <form id="add-category-form">
+                <input type="text" id="category-name" placeholder="Nombre de la Categoría" required>
+                <button type="submit">Añadir Categoría</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Añadir Nuevo Producto</h2>
+            <form id="add-product-form">
+                <input type="text" id="product-name" placeholder="Nombre del Producto" required>
+                <input type="number" id="product-price" placeholder="Precio" step="0.01" required>
+                <select id="product-category" required>
+                    <option value="">Seleccionar Categoría</option>
+                </select>
+                <input type="text" id="product-sizes" placeholder="Tallas disponibles (separadas por comas)" required>
+                <input type="file" id="product-image" accept="image/*" required>
+                <button type="submit">Añadir Producto</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-edit-modal">&times;</span>
+            <h2>Editar Producto</h2>
+            <form id="edit-product-form">
+                <input type="hidden" id="edit-product-id">
+                <input type="text" id="edit-product-name" placeholder="Nombre del Producto" required>
+                <input type="number" id="edit-product-price" placeholder="Precio" step="0.01" required>
+                <select id="edit-product-category" required>
+                    <option value="">Seleccionar Categoría</option>
+                </select>
+                <input type="text" id="edit-product-sizes" placeholder="Tallas disponibles (separadas por comas)" required>
+                <input type="file" id="edit-product-image" accept="image/*">
+                <img id="edit-product-image-preview" src="" alt="Preview" style="max-width: 200px; display: none;">
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="admin-account-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mi Cuenta de Administrador</h2>
+            <form id="admin-account-form">
+                <input type="email" id="admin-email" placeholder="Correo Electrónico" required>
+                <input type="password" id="admin-current-password" placeholder="Contraseña Actual" required>
+                <input type="password" id="admin-new-password" placeholder="Nueva Contraseña">
+                <input type="password" id="admin-confirm-password" placeholder="Confirmar Nueva Contraseña">
+                <button type="submit">Actualizar Cuenta</button>
+            </form>
+            <p id="admin-account-message"></p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

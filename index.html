@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLCSTORE - Catálogo de Zapatillas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./nlclogo.png" alt="NLCSTORE Logo" class="logo">
+        </div>
+        <nav>
+            <button id="home-btn"><i class="fas fa-home"></i> <span class="button-text">Inicio</span></button>
+            <button id="cart-btn"><i class="fas fa-shopping-cart"></i> <span class="button-text">Carrito</span> (<span id="cart-counter">0</span>)</button>
+            <div id="guest-buttons">
+                <button id="login-btn"><i class="fas fa-sign-in-alt"></i> <span class="button-text">Iniciar Sesión</span></button>
+                <button id="register-btn"><i class="fas fa-user-plus"></i> <span class="button-text">Registrarse</span></button>
+            </div>
+            <div id="user-panel" style="display: none;">
+                <button id="account-btn"><i class="fas fa-user"></i> <span id="user-email"></span></button>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> <span class="button-text">Cerrar Sesión</span></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="filters">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="super_start">Super Start</button>
+            <button class="filter-btn" data-category="adidas">Adidas</button>
+            <button class="filter-btn" data-category="nike">Nike</button>
+            <button class="filter-btn" data-category="puma">Puma</button>
+            <button class="filter-btn" data-category="vans">Vans</button>
+            <button class="filter-btn" data-category="reebok">Reebok</button>
+            <button class="filter-btn" data-category="watches">Relojes</button>
+        </section>
+
+        <section id="sneaker-grid"></section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="cart-total">0</span></p>
+            <button id="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Catálogo de Zapatillas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (currentUser) {
+                // El usuario ha iniciado sesión, actualiza la interfaz en consecuencia
+                console.log('Usuario logueado:', currentUser.email);
+                // Aquí puedes añadir código para actualizar la interfaz de usuario
+            }
+        });
+    </script>
+</body>
+</html>
